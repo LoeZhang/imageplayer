@@ -1,7 +1,6 @@
 package com.loe.test
 
 import android.app.Application
-import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.loe.imageplayer.ImagePlayer
 
@@ -22,7 +21,7 @@ class App : Application()
 
         ImagePlayer.setOnDownloadListener()
         {imageUrl ->
-            Toast.makeText(this, "下载成功", Toast.LENGTH_SHORT).show()
+            ImageFileUtil.downloadImage(this, imageUrl)
         }
     }
 }
