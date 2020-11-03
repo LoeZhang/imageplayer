@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="#222">
+
+    <com.loe.imageplayer.PhotoViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.loe.imageplayer.PhotoViewPager>
+
+    <LinearLayout
+        android:id="@+id/viewBottom"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/photo_shape_shadow">
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:onClick="activityBack"
+            android:padding="16dp"
+            android:src="@mipmap/imageplayer_back"/>
+
+        <TextView
+            android:id="@+id/textName"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="-10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center_vertical"
+            android:textColor="#fff"
+            android:textSize="14dp"
+            android:singleLine="true"
+            android:ellipsize="middle"
+            android:layout_height="match_parent"
+            android:text="文本"/>
+
+        <TextView
+            android:id="@+id/textIndex"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:paddingRight="18dp"
+            android:textSize="14dp"
+            android:layout_height="match_parent"
+            android:text="1/5"/>
+
+        <ImageView
+            android:id="@+id/buttonDownload"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="-20dp"
+            android:onClick="activityDownload"
+            android:padding="14dp"
+            android:src="@mipmap/imageplayer_download"/>
+
+    </LinearLayout>
+
+</FrameLayout>
