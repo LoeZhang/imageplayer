@@ -31,15 +31,15 @@ public class PhotoFragment extends Fragment
         }
         photoView = new PhotoView(getContext());
         displayPhotoView();
-        photoView.setOnPhotoTapListener(new PhotoViewAttacher.OnPhotoTapListener()
-        {
-            @Override
-            public void onPhotoTap(View view, float x, float y)
-            {
-                PhotoActivity photoActivity = (PhotoActivity)getActivity();
-                photoActivity.displayBottom(photoActivity.viewBottom.getVisibility() == View.GONE);
-            }
-        });
+//        photoView.setOnPhotoTapListener(new PhotoViewAttacher.OnPhotoTapListener()
+//        {
+//            @Override
+//            public void onPhotoTap(View view, float x, float y)
+//            {
+//                PhotoActivity photoActivity = (PhotoActivity)getActivity();
+//                photoActivity.displayBottom(photoActivity.viewBottom.getVisibility() == View.GONE);
+//            }
+//        });
         photoView.setOnLongClickListener(new View.OnLongClickListener()
         {
             @Override
@@ -48,6 +48,15 @@ public class PhotoFragment extends Fragment
                 PhotoActivity photoActivity = (PhotoActivity)getActivity();
                 photoActivity.displayBottom(true);
                 return true;
+            }
+        });
+        photoView.setOnViewTapListener(new PhotoViewAttacher.OnViewTapListener()
+        {
+            @Override
+            public void onViewTap(View view, float x, float y)
+            {
+                PhotoActivity photoActivity = (PhotoActivity)getActivity();
+                photoActivity.displayBottom(photoActivity.viewBottom.getVisibility() == View.GONE);
             }
         });
         return photoView;

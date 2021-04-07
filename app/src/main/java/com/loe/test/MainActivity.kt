@@ -23,7 +23,8 @@ class MainActivity : AppCompatActivity()
 
         buttonJump.setOnClickListener()
         {
-            ImagePlayer.open(this, urlList, 1)
+//            ImagePlayer.open(this, urlList, 1)
+            ImagePlayer.openFast(this, "")
         }
     }
 }

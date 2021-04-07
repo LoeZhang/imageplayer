@@ -13,6 +13,16 @@ import java.util.List;
 
 public class ImagePlayer
 {
+    public static void openFast(Activity activity, String url)
+    {
+        Intent intent = new Intent(activity, PhotoActivity.class);
+        intent.putExtra("url", url);
+        intent.putExtra("name", "");
+        intent.putExtra("isFast", true);
+        activity.startActivity(intent);
+        activity.overridePendingTransition(R.anim.scale_in, R.anim.on);
+    }
+
     public static void open(Activity activity, String url, String name)
     {
         Intent intent = new Intent(activity, PhotoActivity.class);

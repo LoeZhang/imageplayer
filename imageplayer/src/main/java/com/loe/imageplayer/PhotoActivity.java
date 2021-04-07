@@ -32,6 +32,8 @@ public class PhotoActivity extends FragmentActivity
     private Animation inAnimation;
     private Animation outAnimation;
 
+    private boolean isFast;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -48,6 +50,8 @@ public class PhotoActivity extends FragmentActivity
             window.setNavigationBarColor(0xFF181818);
         }
         setContentView(R.layout.photo_activity);
+
+        isFast = getIntent().getBooleanExtra("isFast", false);
 
         urlList = new ArrayList<>();
         nameList = new ArrayList<>();
@@ -146,10 +150,21 @@ public class PhotoActivity extends FragmentActivity
             {
             }
         });
+
+        // 判断isFast
+        if(isFast)
+        {
+            viewBottom.setVisibility(View.GONE);
+        }
     }
 
     public void displayBottom(boolean is)
     {
+        if(isFast)
+        {
+            activityBack(null);
+            return;
+        }
         try
         {
             viewBottom.setVisibility(View.VISIBLE);
